@@ -2,7 +2,7 @@
 #include "vector.hpp"
 
 int main() {
-    ipb::name_vector<int> my_vector("MyIntVector");
+    ipb::name_vector<int> my_vector ("MyIntVector");
 
     std::cout << "Vector Name: " << my_vector.name() << "\n";
     std::cout << "Is Empty: " << std::boolalpha << my_vector.empty() << "\n";
