@@ -12,12 +12,13 @@ namespace ipb {
     std::string name_;
 
    public:
-    // Constructor
+ 
     explicit name_vector(const std::string& name);
 
-    // Member functions
+   
     std::vector<T>& vector();
     const std::vector<T>& vector() const;
+    const std::vector<T>& operator()() const;
     std::string name() const;
     bool empty() const;
     size_t size() const;

@@ -21,6 +21,10 @@ const std::vector<T>& name_vector<T>::vector() const {
     return data_;
 }
 
+template <typename T>
+const std::vector<T>& name_vector<T>::operator()() const {
+    return data_;
+}
 /*Returns the name of the vector*/ 
 template <typename T>
 std::string name_vector<T>::name() const {
