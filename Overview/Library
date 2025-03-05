@@ -1,0 +1,32 @@
+iện ích chung trong C++ (General-purpose Utilities):
+Program utilities (std::abort)
+
+Dừng chương trình ngay lập tức.
+Date and Time (std::chrono::duration)
+
+Hỗ trợ làm việc với thời gian, thời lượng, đồng hồ.
+Optional, Variant và Any (std::variant)
+
+std::optional: Đại diện cho một giá trị có thể có hoặc không.
+std::variant: Kiểu dữ liệu tổng hợp (union type an toàn).
+std::any: Lưu trữ bất kỳ kiểu dữ liệu nào mà không cần biết trước.
+Pairs và Tuples (std::tuple)
+
+std::pair: Lưu trữ một cặp giá trị.
+std::tuple: Lưu trữ nhiều giá trị có thể có kiểu khác nhau.
+Swap, Forward và Move (std::move)
+
+std::swap: Hoán đổi giá trị của hai biến.
+std::forward: Giữ nguyên kiểu tham chiếu khi truyền tham số.
+std::move: Chuyển đổi giá trị mà không cần sao chép dữ liệu.
+Hash support (std::hash)
+
+Hỗ trợ tạo giá trị băm cho các kiểu dữ liệu dùng trong unordered containers như std::unordered_map, std::unordered_set.
+Formatting library (C++20)
+
+Bổ sung thư viện định dạng chuỗi giống printf, nhưng an toàn hơn, mạnh hơn (std::format trong C++20).
+Much more...
+
+Ngoài ra còn nhiều tiện ích khác trong thư viện chuẩn C++.
+
+Ex:
