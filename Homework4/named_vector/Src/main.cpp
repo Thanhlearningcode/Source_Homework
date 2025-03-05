@@ -1,7 +1,10 @@
 #include <iostream>
 #include "vector.hpp"
+#include <cstdlib>
 
+void Bye();
 int main() {
+    std::atexit(Bye);
     ipb::name_vector<int> my_vector ("MyIntVector");
 
     std::cout << "Vector Name: " << my_vector.name() << "\n";
@@ -14,4 +17,8 @@ int main() {
     std::cout << "Vector Capacity: " << my_vector.capacity() << "\n";
 
     return 0;
+}
+
+void Bye () {
+    std::cout <<"Bye bye!! See you soon\n";
 }
