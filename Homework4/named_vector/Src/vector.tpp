@@ -7,7 +7,7 @@ namespace ipb {
 
 /*Constructor: Initializes the name*/ 
 template <typename T>
-name_vector<T>::name_vector(const std::string& name) : name_(name) {}
+name_vector<T>::name_vector (const std::string& name) : name_(name) {}
 
 /*Returns a reference to the internal vector*/ 
 template <typename T>
