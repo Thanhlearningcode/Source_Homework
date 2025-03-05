@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../api/image_browser.hpp
+array
+-
+string
+-
+tuple
+-
+vector
+-
+
+/home/thanh/C_Plus_Plus/Homework/Homework3/main.cpp
+image_browser.hpp
+/home/thanh/C_Plus_Plus/Homework/Homework3/image_browser.hpp
+vector
+-
+array
+-
+tuple
+-
+string
+-
+

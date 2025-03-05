@@ -1,0 +1,5 @@
+/home/thanh/C_Plus_Plus/Homework/Homework3/build/CMakeFiles/rebuild_cache.dir
+/home/thanh/C_Plus_Plus/Homework/Homework3/build/CMakeFiles/edit_cache.dir
+/home/thanh/C_Plus_Plus/Homework/Homework3/build/CMakeFiles/main.dir
+/home/thanh/C_Plus_Plus/Homework/Homework3/build/CMakeFiles/image_browser.dir
+/home/thanh/C_Plus_Plus/Homework/Homework3/build/CMakeFiles/html_writer.dir
