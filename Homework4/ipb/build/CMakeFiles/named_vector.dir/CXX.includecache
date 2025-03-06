@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Inc/ibp.hpp
+string
+-
+algorithm
+-
+numeric
+-
+iostream
+-
+vector.hpp
+../Inc/vector.hpp
+
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ibp.cpp
+ibp.hpp
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ibp.hpp
+
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/main.cpp
+iostream
+-
+ipb.hpp
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ipb.hpp
+cstdlib
+-
+
