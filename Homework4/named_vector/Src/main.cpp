@@ -16,8 +16,8 @@ int main() {
     std::cout << "Vector Size: " << my_vector.size() << "\n";
     std::cout << "Vector Capacity: " << my_vector.capacity() << "\n";
     /* Print element of vector */
-for (auto i: my_vector()){
-    std::cout << i<<std::endl;
+for (auto i: my_vector()) {
+    std::cout << i <<std::endl;
 }
     return 0;
 }

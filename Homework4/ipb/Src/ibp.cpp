@@ -26,8 +26,30 @@
 	       std:: find(vec.data().begin(), vec.data().end(), value) !value = vec.data().end();
 	  }
 	  void print (const name_vector<int>& vec) {
-	  	std::<< cout<<vec.data();
-	  }
+	  	std::<< cout<<vec.name()<<":";
+	        for (auto& val:vec.data()) {
+		std::cout << val<< ",";		
+		}
+		std::cout<< endl;
+	   }
+	   void toupper(name_vector<int>& vec) {
+		std::string& name = vec.name();
+		std::transform (vec.begin(), vec.end(), vec.begin(), ::toupper);
+	   }
+
+	   void sort(name_vector<int>& vec) {
+		std::cout<<vec.name()<<":";
+		std::sort(vec.data().begin(), vec.data().end());
+	   }
+	   void rotate(name_vector<int>& vec, int positions) {
+		std::rotate(vec.data().begin(), vec.data().begin() + positions, vec.data().end());
+	   }
+
+	   void reverse(name_vector<int>& vec) {
+		std::reverse(vec.data().begin(), vec.data().end());
+	   }
+
+
 
 	  }
 	

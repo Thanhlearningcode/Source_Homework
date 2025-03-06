@@ -51,13 +51,13 @@ size_t name_vector<T>::capacity() const {
 
 /*Reserves space for the vector*/ 
 template <typename T>
-void name_vector<T>::reserve(size_t n) {
+void name_vector<T>::reserve (size_t n) {
     data_.reserve(n);
 }
 
 /*Resizes the vector*/ 
 template <typename T>
-void name_vector<T>::resize(size_t n) {
+void name_vector<T>::resize (size_t n) {
     data_.resize(n);
 }
 
