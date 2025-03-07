@@ -1,0 +1,19 @@
+Start testing: Mar 06 23:38 PST
+----------------------------------------------------------
+Unable to find executable: Homework4_test_NOT_BUILT-b12d07c
+1/1 Testing: Homework4_test_NOT_BUILT-b12d07c
+1/1 Test: Homework4_test_NOT_BUILT-b12d07c
+Command: ""
+Directory: /home/thanh/C_Plus_Plus/Homework/Homework4/tests/build
+"Homework4_test_NOT_BUILT-b12d07c" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Homework4_test_NOT_BUILT-b12d07c" end time: Mar 06 23:38 PST
+"Homework4_test_NOT_BUILT-b12d07c" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 06 23:38 PST
