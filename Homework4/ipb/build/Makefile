@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/thanh/C_Plus_Plus/Homework/Homework4/ipb/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named named_vector
+# Target rules for targets named ipb_exec
 
 # Build rule for target.
-named_vector: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 named_vector
-.PHONY : named_vector
+ipb_exec: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ipb_exec
+.PHONY : ipb_exec
 
 # fast build rule for target.
-named_vector/fast:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/build
-.PHONY : named_vector/fast
+ipb_exec/fast:
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/build
+.PHONY : ipb_exec/fast
 
 Src/ibp.o: Src/ibp.cpp.o
 
@@ -129,7 +129,7 @@ Src/ibp.o: Src/ibp.cpp.o
 
 # target to build an object file
 Src/ibp.cpp.o:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/ibp.cpp.o
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/ibp.cpp.o
 .PHONY : Src/ibp.cpp.o
 
 Src/ibp.i: Src/ibp.cpp.i
@@ -138,7 +138,7 @@ Src/ibp.i: Src/ibp.cpp.i
 
 # target to preprocess a source file
 Src/ibp.cpp.i:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/ibp.cpp.i
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/ibp.cpp.i
 .PHONY : Src/ibp.cpp.i
 
 Src/ibp.s: Src/ibp.cpp.s
@@ -147,7 +147,7 @@ Src/ibp.s: Src/ibp.cpp.s
 
 # target to generate assembly for a file
 Src/ibp.cpp.s:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/ibp.cpp.s
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/ibp.cpp.s
 .PHONY : Src/ibp.cpp.s
 
 Src/main.o: Src/main.cpp.o
@@ -156,7 +156,7 @@ Src/main.o: Src/main.cpp.o
 
 # target to build an object file
 Src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/main.cpp.o
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/main.cpp.o
 .PHONY : Src/main.cpp.o
 
 Src/main.i: Src/main.cpp.i
@@ -165,7 +165,7 @@ Src/main.i: Src/main.cpp.i
 
 # target to preprocess a source file
 Src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/main.cpp.i
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/main.cpp.i
 .PHONY : Src/main.cpp.i
 
 Src/main.s: Src/main.cpp.s
@@ -174,7 +174,7 @@ Src/main.s: Src/main.cpp.s
 
 # target to generate assembly for a file
 Src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/named_vector.dir/build.make CMakeFiles/named_vector.dir/Src/main.cpp.s
+	$(MAKE) -f CMakeFiles/ipb_exec.dir/build.make CMakeFiles/ipb_exec.dir/Src/main.cpp.s
 .PHONY : Src/main.cpp.s
 
 # Help Target
@@ -183,9 +183,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... named_vector"
+	@echo "... rebuild_cache"
+	@echo "... ipb_exec"
 	@echo "... Src/ibp.o"
 	@echo "... Src/ibp.i"
 	@echo "... Src/ibp.s"

@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Inc -I/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src 
+CXX_INCLUDES = -I/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Inc 
 

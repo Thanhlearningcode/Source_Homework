@@ -1,27 +1,40 @@
 #include <iostream>
-#include "ipb.hpp"
-#include <cstdlib>
+#include "ibp.hpp"
 
-void Byebye (void);
-    int main (int argc, char const *argv[]) {
-        atexit (Byebye);
-        ipb::named_vector<int> acc("name", {4, 2, 1, 3});
-        /*returns the sum over all the elements in the data container*/
-        std:: cout << ipb::acculate (acc) <<std::end;
-        /*return how many elements are stored in the container*/
-        std:: cout << ipb::cout (vec,1) << std::end;
-        /*returns true if all values in the container are even, false otherwise.*/
-        std:: cout << ipb::all_even (vec) ? "TRUE" :"NO"<<std::endl;
-        /*clamp all the values in the container to a given range [min, max]*/
-        std:: cout << ipb::clamp (vec,0,15)<<"After clamping:"<<print(vec);
-        std:: cout << ipb::fill (vec,-99)<<std::endl;
-        std:: cout << ipb:: print(vec)<< std:: endl;
-        std:: cout << ipb::toupper(vec)<<std::endl;
-        std:: cout << ipb::sort (vec)<<std::endl;
-        std:: cout << ipb::rotate (vec,1)<< std::endl;
-        std:: cout << ipb::reverse (vec) << std::endl;
-        return 1;
-    }
-void Byebye (void) {
-    std::cout <<"Bye bye! See you soon";
-    }
+void Byebye(void);
+
+int main() {
+    atexit(Byebye);
+    
+    ipb::name_vector<int> acc("name", {4, 2, 1, 3});
+
+   // std::cout << "Sum: " << ipb::accmulate(acc) << std::endl;
+    std::cout << "Count of 1: " << ipb::count(acc, 1) << std::endl;
+    std::cout << "All even: " << (ipb::all_even(acc) ? "TRUE" : "NO") << std::endl;
+    
+    // ipb::clamp(vec, 0, 15);
+    // std::cout << "After clamping: ";
+    // ipb::print(vec);
+    
+    // vec.resize(10);  // Đảm bảo đủ chỗ trước khi fill
+    // ipb::fill(vec, -99);
+    
+
+    ipb::toupper(acc);
+    std::cout << "Uppercase name: " << acc.name() << std::endl;
+
+    ipb::sort(acc);
+    ipb::print(acc);
+
+    ipb::rotate(acc, 1);
+    ipb::print(acc);
+
+    ipb::reverse(acc);
+    ipb::print(acc);
+
+    return 0;
+}
+
+void Byebye(void) {
+    std::cout << "Bye bye! See you soon" << std::endl;
+}

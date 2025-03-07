@@ -1,56 +1,64 @@
-#include "ibp.hpp"
+#ifndef IPB_ALGORITHM_HPP
+#define IPB_ALGORITHM_HPP
 
-	namespace ibp {
-	
-	  int accmulate (const name_vector<int>& vec) {
-	  	return (vec.data().begin(), vec.data().end(),0);
-	   }
+#include "vector.hpp"
+#include <algorithm>
+#include <numeric>
+#include <iostream>
 
-	  int cout (const name_vector<int>& vec, int value) {
-	  	return (vec.data().begin(), vec.data().end(), value); 
-	  }
-	  
-	  bool all_even (const name_vector<int>& vec) {
-	  	return std::all_of(vec.data().begin, vec.data().end(), [](int n) { return (i%2 ==0 ); }
-	  }
+namespace ipb {
 
-	  void clamp (name_vector<int>& vec, int min, int max) {
-	       for (auto& val:vec.data()) {
-	       	   val = std::clamp(val,min,max);
-	       }
-	  void fill (name_vector<int>& vec, int value) {
-	       std::fill(vec.data().begin(), vec.data().end(), value);
-	  }
+int accumulate(const name_vector<int>& vec) {
+    return std::accumulate(vec.vector().begin(), vec.vector().end(), 0);
+}
 
-	  bool find (const name_vector<int>& vec, int value) {
-	       std:: find(vec.data().begin(), vec.data().end(), value) !value = vec.data().end();
-	  }
-	  void print (const name_vector<int>& vec) {
-	  	std::<< cout<<vec.name()<<":";
-	        for (auto& val:vec.data()) {
-		std::cout << val<< ",";		
-		}
-		std::cout<< endl;
-	   }
-	   void toupper(name_vector<int>& vec) {
-		std::string& name = vec.name();
-		std::transform (vec.begin(), vec.end(), vec.begin(), ::toupper);
-	   }
+int count(const name_vector<int>& vec, int value) {
+    return std::count(vec.vector().begin(), vec.vector().end(), value);
+}
 
-	   void sort(name_vector<int>& vec) {
-		std::cout<<vec.name()<<":";
-		std::sort(vec.data().begin(), vec.data().end());
-	   }
-	   void rotate(name_vector<int>& vec, int positions) {
-		std::rotate(vec.data().begin(), vec.data().begin() + positions, vec.data().end());
-	   }
+bool all_even(const name_vector<int>& vec) {
+    return std::all_of(vec.vector().begin(), vec.vector().end(), [](int n) { return n % 2 == 0; });
+}
 
-	   void reverse(name_vector<int>& vec) {
-		std::reverse(vec.data().begin(), vec.data().end());
-	   }
+void clamp(name_vector<int>& vec, int min, int max) {
+    std::for_each(vec.vector().begin(), vec.vector().end(), [min, max](int& n) {
+        n = std::max(min, std::min(n, max));
+    });
+}
+
+void fill(name_vector<int>& vec, int value) {
+    std::fill(vec.vector().begin(), vec.vector().end(), value);
+}
+
+bool find(const name_vector<int>& vec, int value) {
+    return std::find(vec.vector().begin(), vec.vector().end(), value) != vec.vector().end();
+}
+
+void print(const name_vector<int>& vec) {
+    std::cout << "Vector (" << vec.name() << "): ";
+    for (int v : vec.vector()) {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
+}
+
+void toupper(name_vector<int>& vec) {
+    std::transform(vec.name().begin(), vec.name().end(), vec.name().begin(), ::toupper);
+}
 
 
+void sort(name_vector<int>& vec) {
+    std::sort(vec.vector().begin(), vec.vector().end());
+}
 
-	  }
-	
-	}
+void rotate(name_vector<int>& vec, int positions) {
+    std::rotate(vec.vector().begin(), vec.vector().begin() + positions, vec.vector().end());
+}
+
+void reverse(name_vector<int>& vec) {
+    std::reverse(vec.vector().begin(), vec.vector().end());
+}
+
+}  // namespace ipb
+
+#endif /* IPB_ALGORITHM_HPP */

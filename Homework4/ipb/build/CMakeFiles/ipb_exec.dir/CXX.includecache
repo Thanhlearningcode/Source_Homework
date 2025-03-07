@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 ../Inc/ibp.hpp
+vector.hpp
+../Inc/vector.hpp
 string
 -
 algorithm
@@ -15,18 +17,26 @@ numeric
 -
 iostream
 -
-vector.hpp
+
 ../Inc/vector.hpp
+vector
+-
+string
+-
 
 /home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ibp.cpp
-ibp.hpp
-/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ibp.hpp
+vector.hpp
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/vector.hpp
+algorithm
+-
+numeric
+-
+iostream
+-
 
 /home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/main.cpp
 iostream
 -
-ipb.hpp
-/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ipb.hpp
-cstdlib
--
+ibp.hpp
+/home/thanh/C_Plus_Plus/Homework/Homework4/ipb/Src/ibp.hpp
 

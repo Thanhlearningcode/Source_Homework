@@ -1,11 +1,10 @@
 #ifndef IPB_ALGORITHM_HPP
 #define IPB_ALGORITHM_HPP
-
+#include "vector.hpp" //< Thư viện từ bên folder named_vector
 #include <string>
 #include <algorithm>
 #include <numeric>
 #include <iostream>
-#include "vector.hpp" //< Thư viện từ bên folder named_vector
 
 namespace ipb {
 
