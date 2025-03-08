@@ -1,5 +1,5 @@
 **➡️ Tiếp theo: Bài 3 - Lambda Expressions và Functor**  
-Bạn muốn mình tiếp tục ngay với bài 3 hay có phần nào trong bài 2 bạn muốn làm rõ hơn? 🚀
+
 
 # C++ Hiện Đại – Bài 3: Lambda Expressions và Functor
 
