@@ -1,4 +1,4 @@
-# anyf - Unit Testing C++ với Google Test
+# Unit Testing C++ với Google Test
 
 ## Giới thiệu
 `test` là một dự án C++ minh họa cách viết unit test bằng Google Test (GTest). Dự án giúp kiểm thử mã nguồn một cách hiệu quả, đảm bảo tính đúng đắn và ổn định của chương trình. Việc sử dụng unit test giúp phát hiện lỗi sớm, giảm chi phí bảo trì và cải thiện chất lượng phần mềm.
