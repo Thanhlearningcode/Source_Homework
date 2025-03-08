@@ -1,7 +1,7 @@
-Tuyệt! Mình sẽ giải thích theo thứ tự từng bài.  
+
 
 ### **Bắt đầu với Bài 2: C++ Hiện Đại – Các Cú Pháp Mới**  
-Mình sẽ đi từng mục nhỏ trong bài này trước. Bạn có thể theo dõi và hỏi nếu có gì chưa rõ nhé!  
+
 
 ---
 
