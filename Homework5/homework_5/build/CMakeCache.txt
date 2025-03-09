@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=siftserial
+CMAKE_PROJECT_NAME:STATIC=ConvertDataset
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -215,17 +215,17 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+ConvertDataset_BINARY_DIR:STATIC=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/build
+
+//Value Computed by CMake
+ConvertDataset_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ConvertDataset_SOURCE_DIR:STATIC=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5
+
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=OpenCV_DIR-NOTFOUND
-
-//Value Computed by CMake
-siftserial_BINARY_DIR:STATIC=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/build
-
-//Value Computed by CMake
-siftserial_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-siftserial_SOURCE_DIR:STATIC=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5
+OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
 
 ########################

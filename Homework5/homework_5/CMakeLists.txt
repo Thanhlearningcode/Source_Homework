@@ -1,30 +1,18 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.10)
+project(ConvertDataset)
 
-project(siftserial)
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++17 -pthread")
-find_package(OpenCV 4.1 REQUIRED)
-	
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Find OpenCV with contrib modules
+find_package(OpenCV REQUIRED core imgproc highgui features2d calib3d contrib)
+
 include_directories(${OpenCV_INCLUDE_DIRS})
-link_directories(${OpenCV_LIBRARY_DIRS})
-add_definitions(${OpenCV_DEFINITIONS})
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3")
+include_directories(${PROJECT_SOURCE_DIR}/include)  # Adding the include directory
 
-set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
+file(GLOB SOURCES "source/*.cpp")
 
-set(DIVISIBLE_INSTALL_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
-set(DIVISION_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
+add_executable(convert_dataset ${SOURCES})
 
-include_directories(${DIVISIBLE_INSTALL_INCLUDE_DIR})
-include_directories(${DIVISION_SOURCE_DIR})
-# Add project executable
-# add_executable(siftserial ${DIVISION_SOURCE_DIR}/convert_dataset.cpp ${DIVISION_SOURCE_DIR}/serialize.cpp )
-# target_link_libraries(siftserial ${OpenCV_LIBRARIES} stdc++fs)
-
-# add serialize library
-add_library(mat_serialization  src/serialize.cpp)
-add_library(convert_dataset src/convert_dataset.cpp)
-target_link_libraries(mat_serialization convert_dataset ${OpenCV_LIBRARIES} stdc++fs)
-
-enable_testing ()
-add_subdirectory (tests)
+# Link OpenCV libraries including contrib
+target_link_libraries(convert_dataset ${OpenCV_LIBS})

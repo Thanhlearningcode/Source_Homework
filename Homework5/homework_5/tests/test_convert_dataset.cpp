@@ -3,15 +3,16 @@
 //
 // Copyright (c) 2020 Ignacio Vizzo, all rights reserved
 
-#include <filesystem>
+
+#include <experimental/filesystem>
 #include <fstream>
 #include <string>
 
-#include <catch2/catch.hpp>
 #include <opencv2/core/mat.hpp>
-
+#include <catch2/catch_all.hpp>
 #include "convert_dataset.hpp"
 #include "homework_5.h"
+
 
 namespace fs = std::filesystem;
 TEST_CASE("Compute SIFTS from dataset and serialize", "[convert_dataset]") {
@@ -19,7 +20,7 @@ TEST_CASE("Compute SIFTS from dataset and serialize", "[convert_dataset]") {
   const std::string bin_path = "data/freiburg/bin/";
   ipb::serialization::sifts::ConvertDataset(img_path);
 
-  for (const auto& entry : fs::directory_iterator(img_path)) {
+  for (const auto& en try : fs::directory_iterator(img_path)) {
     const auto& stem = entry.path().stem().string();
     const auto& extension = entry.path().extension();
     if (extension == ".png") {
