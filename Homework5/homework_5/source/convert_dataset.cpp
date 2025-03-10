@@ -5,26 +5,25 @@
 #include <opencv2/core/mat.hpp>
 #include <iostream>
 #include <opencv2/xfeatures2d.hpp>
-  // Thêm dòng này
-#include <experimental/filesystem> // Hoặc #include <filesystem> nếu dùng C++17
-namespace fs = std::experimental::filesystem; // Hoặc std::filesystem
+#include <experimental/filesystem> // Or #include <filesystem> if using C++17
+namespace fs = std::experimental::filesystem; // Or std::filesystem
 
 namespace ipb::serialization::sifts {
 
 std::tuple<cv::Mat, std::vector<cv::KeyPoint>> ComputeSifts(const std::string& fileName) {
-    // Đọc ảnh
+    // Read image
     cv::Mat kInput = cv::imread(fileName, cv::IMREAD_GRAYSCALE);
     if (kInput.empty()) {
         std::cerr << "Error: Could not open or find the image " << fileName << std::endl;
         return {};
     }
 
-    // Phát hiện keypoints
-    cv::Ptr<cv::Feature2D> detector = cv::SIFT::create();
+    // Detect keypoints
+    cv::Ptr<cv::Feature2D> detector = cv::xfeatures2d::SIFT::create();
     std::vector<cv::KeyPoint> keypoints;
     detector->detect(kInput, keypoints);
 
-    // Tính toán descriptors
+    // Compute descriptors
     cv::Mat descriptors;
     detector->compute(kInput, keypoints, descriptors);
 

@@ -63,17 +63,13 @@ CMAKE_BINARY_DIR = /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/b
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/convert_dataset.dir/all
-all: CMakeFiles/mat_serialization.dir/all
 all: CMakeFiles/sifts_internal.dir/all
-all: CMakeFiles/Homework4Tests_test.dir/all
+all: CMakeFiles/ConvertDatasetTests_test.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/convert_dataset.dir/codegen
-codegen: CMakeFiles/mat_serialization.dir/codegen
 codegen: CMakeFiles/sifts_internal.dir/codegen
-codegen: CMakeFiles/Homework4Tests_test.dir/codegen
+codegen: CMakeFiles/ConvertDatasetTests_test.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -109,10 +105,8 @@ clean: CMakeFiles/ContinuousTest.dir/clean
 clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
-clean: CMakeFiles/convert_dataset.dir/clean
-clean: CMakeFiles/mat_serialization.dir/clean
 clean: CMakeFiles/sifts_internal.dir/clean
-clean: CMakeFiles/Homework4Tests_test.dir/clean
+clean: CMakeFiles/ConvertDatasetTests_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1012,77 +1006,13 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 .PHONY : CMakeFiles/ContinuousSubmit.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/convert_dataset.dir
-
-# All Build rule for target.
-CMakeFiles/convert_dataset.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=5,6 "Built target convert_dataset"
-.PHONY : CMakeFiles/convert_dataset.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/convert_dataset.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/convert_dataset.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 0
-.PHONY : CMakeFiles/convert_dataset.dir/rule
-
-# Convenience name for target.
-convert_dataset: CMakeFiles/convert_dataset.dir/rule
-.PHONY : convert_dataset
-
-# codegen rule for target.
-CMakeFiles/convert_dataset.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=5,6 "Finished codegen for target convert_dataset"
-.PHONY : CMakeFiles/convert_dataset.dir/codegen
-
-# clean rule for target.
-CMakeFiles/convert_dataset.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/clean
-.PHONY : CMakeFiles/convert_dataset.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/mat_serialization.dir
-
-# All Build rule for target.
-CMakeFiles/mat_serialization.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=7,8 "Built target mat_serialization"
-.PHONY : CMakeFiles/mat_serialization.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/mat_serialization.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mat_serialization.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 0
-.PHONY : CMakeFiles/mat_serialization.dir/rule
-
-# Convenience name for target.
-mat_serialization: CMakeFiles/mat_serialization.dir/rule
-.PHONY : mat_serialization
-
-# codegen rule for target.
-CMakeFiles/mat_serialization.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=7,8 "Finished codegen for target mat_serialization"
-.PHONY : CMakeFiles/mat_serialization.dir/codegen
-
-# clean rule for target.
-CMakeFiles/mat_serialization.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/clean
-.PHONY : CMakeFiles/mat_serialization.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/sifts_internal.dir
 
 # All Build rule for target.
 CMakeFiles/sifts_internal.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sifts_internal.dir/build.make CMakeFiles/sifts_internal.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sifts_internal.dir/build.make CMakeFiles/sifts_internal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=9,10 "Built target sifts_internal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=5,6 "Built target sifts_internal"
 .PHONY : CMakeFiles/sifts_internal.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1099,7 +1029,7 @@ sifts_internal: CMakeFiles/sifts_internal.dir/rule
 # codegen rule for target.
 CMakeFiles/sifts_internal.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sifts_internal.dir/build.make CMakeFiles/sifts_internal.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=9,10 "Finished codegen for target sifts_internal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=5,6 "Finished codegen for target sifts_internal"
 .PHONY : CMakeFiles/sifts_internal.dir/codegen
 
 # clean rule for target.
@@ -1108,38 +1038,36 @@ CMakeFiles/sifts_internal.dir/clean:
 .PHONY : CMakeFiles/sifts_internal.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Homework4Tests_test.dir
+# Target rules for target CMakeFiles/ConvertDatasetTests_test.dir
 
 # All Build rule for target.
-CMakeFiles/Homework4Tests_test.dir/all: CMakeFiles/convert_dataset.dir/all
-CMakeFiles/Homework4Tests_test.dir/all: CMakeFiles/mat_serialization.dir/all
-CMakeFiles/Homework4Tests_test.dir/all: CMakeFiles/sifts_internal.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=1,2,3,4 "Built target Homework4Tests_test"
-.PHONY : CMakeFiles/Homework4Tests_test.dir/all
+CMakeFiles/ConvertDatasetTests_test.dir/all: CMakeFiles/sifts_internal.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=1,2,3,4 "Built target ConvertDatasetTests_test"
+.PHONY : CMakeFiles/ConvertDatasetTests_test.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Homework4Tests_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Homework4Tests_test.dir/all
+CMakeFiles/ConvertDatasetTests_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ConvertDatasetTests_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles 0
-.PHONY : CMakeFiles/Homework4Tests_test.dir/rule
+.PHONY : CMakeFiles/ConvertDatasetTests_test.dir/rule
 
 # Convenience name for target.
-Homework4Tests_test: CMakeFiles/Homework4Tests_test.dir/rule
-.PHONY : Homework4Tests_test
+ConvertDatasetTests_test: CMakeFiles/ConvertDatasetTests_test.dir/rule
+.PHONY : ConvertDatasetTests_test
 
 # codegen rule for target.
-CMakeFiles/Homework4Tests_test.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target Homework4Tests_test"
-.PHONY : CMakeFiles/Homework4Tests_test.dir/codegen
+CMakeFiles/ConvertDatasetTests_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target ConvertDatasetTests_test"
+.PHONY : CMakeFiles/ConvertDatasetTests_test.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Homework4Tests_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/clean
-.PHONY : CMakeFiles/Homework4Tests_test.dir/clean
+CMakeFiles/ConvertDatasetTests_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/clean
+.PHONY : CMakeFiles/ConvertDatasetTests_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

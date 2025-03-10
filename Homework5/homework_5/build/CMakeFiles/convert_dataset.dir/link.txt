@@ -1,0 +1,2 @@
+/usr/bin/ar qc libconvert_dataset.a CMakeFiles/convert_dataset.dir/source/convert_dataset.cpp.o CMakeFiles/convert_dataset.dir/source/serialize.cpp.o
+/usr/bin/ranlib libconvert_dataset.a

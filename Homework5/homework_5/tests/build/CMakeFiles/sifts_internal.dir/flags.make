@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dsifts_internal_EXPORTS
 
-CXX_INCLUDES = -I/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/../include -I/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/include -isystem /usr/local/include/opencv4
+CXX_INCLUDES = -I/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/homework_5 -I/usr/include/opencv4 -I/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/include -I/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/source -isystem /usr/local/include/opencv4
 
-CXX_FLAGS = -std=gnu++17 -fPIC
+CXX_FLAGS = -fPIC
 

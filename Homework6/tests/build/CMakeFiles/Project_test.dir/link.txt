@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Project_test.dir/test_init.cpp.o -o Project_test  -lpthread -lgtest_main

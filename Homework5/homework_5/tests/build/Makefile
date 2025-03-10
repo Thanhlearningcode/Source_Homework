@@ -491,32 +491,6 @@ ContinuousSubmit/fast:
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
-# Target rules for targets named convert_dataset
-
-# Build rule for target.
-convert_dataset: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 convert_dataset
-.PHONY : convert_dataset
-
-# fast build rule for target.
-convert_dataset/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/build
-.PHONY : convert_dataset/fast
-
-#=============================================================================
-# Target rules for targets named mat_serialization
-
-# Build rule for target.
-mat_serialization: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mat_serialization
-.PHONY : mat_serialization
-
-# fast build rule for target.
-mat_serialization/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/build
-.PHONY : mat_serialization/fast
-
-#=============================================================================
 # Target rules for targets named sifts_internal
 
 # Build rule for target.
@@ -530,65 +504,17 @@ sifts_internal/fast:
 .PHONY : sifts_internal/fast
 
 #=============================================================================
-# Target rules for targets named Homework4Tests_test
+# Target rules for targets named ConvertDatasetTests_test
 
 # Build rule for target.
-Homework4Tests_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Homework4Tests_test
-.PHONY : Homework4Tests_test
+ConvertDatasetTests_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConvertDatasetTests_test
+.PHONY : ConvertDatasetTests_test
 
 # fast build rule for target.
-Homework4Tests_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/build
-.PHONY : Homework4Tests_test/fast
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.o: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.o
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.o
-
-# target to build an object file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.o
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.o
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.i: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.i
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.i
-
-# target to preprocess a source file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.i
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.i
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.s: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.s
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.s
-
-# target to generate assembly for a file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/convert_dataset.dir/build.make CMakeFiles/convert_dataset.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.s
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.cpp.s
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.o: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.o
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.o
-
-# target to build an object file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.o
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.o
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.i: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.i
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.i
-
-# target to preprocess a source file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.i
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.i
-
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.s: home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.s
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.s
-
-# target to generate assembly for a file
-home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_serialization.dir/build.make CMakeFiles/mat_serialization.dir/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.s
-.PHONY : home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.cpp.s
+ConvertDatasetTests_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/build
+.PHONY : ConvertDatasetTests_test/fast
 
 sifts_internal.o: sifts_internal.cpp.o
 .PHONY : sifts_internal.o
@@ -619,7 +545,7 @@ test_convert_dataset.o: test_convert_dataset.cpp.o
 
 # target to build an object file
 test_convert_dataset.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_convert_dataset.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_convert_dataset.cpp.o
 .PHONY : test_convert_dataset.cpp.o
 
 test_convert_dataset.i: test_convert_dataset.cpp.i
@@ -627,7 +553,7 @@ test_convert_dataset.i: test_convert_dataset.cpp.i
 
 # target to preprocess a source file
 test_convert_dataset.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_convert_dataset.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_convert_dataset.cpp.i
 .PHONY : test_convert_dataset.cpp.i
 
 test_convert_dataset.s: test_convert_dataset.cpp.s
@@ -635,7 +561,7 @@ test_convert_dataset.s: test_convert_dataset.cpp.s
 
 # target to generate assembly for a file
 test_convert_dataset.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_convert_dataset.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_convert_dataset.cpp.s
 .PHONY : test_convert_dataset.cpp.s
 
 test_main.o: test_main.cpp.o
@@ -643,7 +569,7 @@ test_main.o: test_main.cpp.o
 
 # target to build an object file
 test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_main.cpp.o
 .PHONY : test_main.cpp.o
 
 test_main.i: test_main.cpp.i
@@ -651,7 +577,7 @@ test_main.i: test_main.cpp.i
 
 # target to preprocess a source file
 test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_main.cpp.i
 .PHONY : test_main.cpp.i
 
 test_main.s: test_main.cpp.s
@@ -659,7 +585,7 @@ test_main.s: test_main.cpp.s
 
 # target to generate assembly for a file
 test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_main.cpp.s
 .PHONY : test_main.cpp.s
 
 test_serialize.o: test_serialize.cpp.o
@@ -667,7 +593,7 @@ test_serialize.o: test_serialize.cpp.o
 
 # target to build an object file
 test_serialize.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_serialize.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_serialize.cpp.o
 .PHONY : test_serialize.cpp.o
 
 test_serialize.i: test_serialize.cpp.i
@@ -675,7 +601,7 @@ test_serialize.i: test_serialize.cpp.i
 
 # target to preprocess a source file
 test_serialize.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_serialize.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_serialize.cpp.i
 .PHONY : test_serialize.cpp.i
 
 test_serialize.s: test_serialize.cpp.s
@@ -683,7 +609,7 @@ test_serialize.s: test_serialize.cpp.s
 
 # target to generate assembly for a file
 test_serialize.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework4Tests_test.dir/build.make CMakeFiles/Homework4Tests_test.dir/test_serialize.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConvertDatasetTests_test.dir/build.make CMakeFiles/ConvertDatasetTests_test.dir/test_serialize.cpp.s
 .PHONY : test_serialize.cpp.s
 
 # Help Target
@@ -723,16 +649,8 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... Homework4Tests_test"
-	@echo "... convert_dataset"
-	@echo "... mat_serialization"
+	@echo "... ConvertDatasetTests_test"
 	@echo "... sifts_internal"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.o"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.i"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/convert_dataset.s"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.o"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.i"
-	@echo "... home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/source/serialize.s"
 	@echo "... sifts_internal.o"
 	@echo "... sifts_internal.i"
 	@echo "... sifts_internal.s"

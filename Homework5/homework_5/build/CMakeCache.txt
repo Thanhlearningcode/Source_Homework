@@ -227,6 +227,9 @@ ConvertDataset_SOURCE_DIR:STATIC=/home/thanh/C_Plus_Plus/Homework/Homework5/home
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
+//Dependencies for the target
+convert_dataset_LIB_DEPENDS:STATIC=general;opencv_core;general;opencv_imgproc;general;opencv_highgui;general;opencv_features2d;general;opencv_calib3d;general;opencv_xfeatures2d;general;stdc++fs;
+
 
 ########################
 # INTERNAL cache entries
@@ -379,6 +382,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][cfound components: core imgproc highgui features2d calib3d xfeatures2d ][v4.2.0()]
 //linker supports push/pop state
 _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state

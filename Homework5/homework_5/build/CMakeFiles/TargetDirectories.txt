@@ -1,0 +1,3 @@
+/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/build/CMakeFiles/convert_dataset.dir
+/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/build/CMakeFiles/edit_cache.dir
+/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/build/CMakeFiles/rebuild_cache.dir

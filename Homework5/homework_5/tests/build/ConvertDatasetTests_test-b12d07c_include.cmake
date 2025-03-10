@@ -1,0 +1,5 @@
+if(EXISTS "/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/ConvertDatasetTests_test-b12d07c_tests.cmake")
+  include("/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/ConvertDatasetTests_test-b12d07c_tests.cmake")
+else()
+  add_test(ConvertDatasetTests_test_NOT_BUILT-b12d07c ConvertDatasetTests_test_NOT_BUILT-b12d07c)
+endif()

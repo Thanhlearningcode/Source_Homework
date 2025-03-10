@@ -26,10 +26,8 @@
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/ContinuousCoverage.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/ContinuousMemCheck.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/ContinuousSubmit.dir
-/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/convert_dataset.dir
-/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/mat_serialization.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/sifts_internal.dir
-/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/Homework4Tests_test.dir
+/home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/ConvertDatasetTests_test.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/test.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/edit_cache.dir
 /home/thanh/C_Plus_Plus/Homework/Homework5/homework_5/tests/build/CMakeFiles/rebuild_cache.dir
