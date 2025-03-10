@@ -1,0 +1,5 @@
+if(EXISTS "/home/thanh/C_Plus_Plus/Homework/Homework6/build/Project_test[1]_tests.cmake")
+  include("/home/thanh/C_Plus_Plus/Homework/Homework6/build/Project_test[1]_tests.cmake")
+else()
+  add_test(Project_test_NOT_BUILT Project_test_NOT_BUILT)
+endif()

@@ -1,0 +1,5 @@
+/home/thanh/C_Plus_Plus/Homework/Homework6/build/CMakeFiles/image.dir
+/home/thanh/C_Plus_Plus/Homework/Homework6/build/CMakeFiles/Project_test.dir
+/home/thanh/C_Plus_Plus/Homework/Homework6/build/CMakeFiles/test.dir
+/home/thanh/C_Plus_Plus/Homework/Homework6/build/CMakeFiles/edit_cache.dir
+/home/thanh/C_Plus_Plus/Homework/Homework6/build/CMakeFiles/rebuild_cache.dir

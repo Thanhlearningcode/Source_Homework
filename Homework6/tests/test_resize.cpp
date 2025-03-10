@@ -13,7 +13,7 @@ TEST(TestDownScale, DownScaleTrivial) {
   Image image;
   ASSERT_EQ(0, image.rows());
   ASSERT_EQ(0, image.cols());
-  ASSERT_TRUE(image.FillFromPgm("../../tests/data/dummy_file.pgm"));
+  ASSERT_TRUE(image.FillFromPgm("/home/thanh/C_Plus_Plus/Homework/Homework6/tests/data/dummy_file.pgm"));
   image.DownScale(1);
   ASSERT_EQ(10, image.rows());
   ASSERT_EQ(10, image.cols());
@@ -32,7 +32,7 @@ TEST(TestDownScale, DownScale) {
   Image image;
   ASSERT_EQ(0, image.rows());
   ASSERT_EQ(0, image.cols());
-  ASSERT_TRUE(image.FillFromPgm("../../tests/data/dummy_file.pgm"));
+  ASSERT_TRUE(image.FillFromPgm("/home/thanh/C_Plus_Plus/Homework/Homework6/tests/data/dummy_file.pgm"));
   int new_rows = image.rows() / 2;
   int new_cols = image.cols() / 2;
   image.DownScale(2);
@@ -53,7 +53,7 @@ TEST(TestUpScale, UpScaleTrivial) {
   Image image;
   ASSERT_EQ(0, image.rows());
   ASSERT_EQ(0, image.cols());
-  ASSERT_TRUE(image.FillFromPgm("../../tests/data/dummy_file.pgm"));
+  ASSERT_TRUE(image.FillFromPgm("/home/thanh/C_Plus_Plus/Homework/Homework6/tests/data/dummy_file.pgm"));
   image.UpScale(1);
   ASSERT_EQ(10, image.rows());
   ASSERT_EQ(10, image.cols());
@@ -72,7 +72,7 @@ TEST(TestUpScale, UpScale) {
   Image image;
   ASSERT_EQ(0, image.rows());
   ASSERT_EQ(0, image.cols());
-  ASSERT_TRUE(image.FillFromPgm("../../tests/data/dummy_file.pgm"));
+  ASSERT_TRUE(image.FillFromPgm("/home/thanh/C_Plus_Plus/Homework/Homework6/tests/data/dummy_file.pgm"));
   int scale = 2;
   int new_rows = image.rows() * scale;
   int new_cols = image.cols() * scale;
