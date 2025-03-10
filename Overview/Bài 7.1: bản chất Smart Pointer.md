@@ -120,42 +120,127 @@ public:
 
 class ControlBlock {
 public:
-    int ref_count;
-    ControlBlock() : ref_count(1) {}
-    void add_ref() { ++ref_count; }
-    void release_ref() { --ref_count; }
+    int shared_count; // Số SharedPtr tham chiếu đến
+    int weak_count;   // Số WeakPtr tham chiếu đến
+
+    ControlBlock() : shared_count(1), weak_count(0) {}
+
+    void add_ref() { ++shared_count; }
+    void release_ref() { --shared_count; }
+
+    void add_weak() { ++weak_count; }
+    void release_weak() { --weak_count; }
 };
 
+// SharedPtr
 template<typename T>
 class SharedPtr {
 private:
     T* ptr;
     ControlBlock* control;
 public:
-    explicit SharedPtr(T* p = nullptr) : ptr(p), control(new ControlBlock()) {}
-    SharedPtr(const SharedPtr& other) : ptr(other.ptr), control(other.control) { control->add_ref(); }
+    explicit SharedPtr(T* p = nullptr) : ptr(p), control(nullptr) {
+        if (ptr) {
+            control = new ControlBlock();
+        }
+    }
+
+    SharedPtr(const SharedPtr& other) : ptr(other.ptr), control(other.control) {
+        if (control) control->add_ref();
+    }
+
     SharedPtr& operator=(const SharedPtr& other) {
         if (this != &other) {
-            control->release_ref();
-            if (control->ref_count == 0) {
-                delete ptr;
-                delete control;
-            }
+            release();
             ptr = other.ptr;
             control = other.control;
-            control->add_ref();
+            if (control) control->add_ref();
         }
         return *this;
     }
+
     ~SharedPtr() {
-        control->release_ref();
-        if (control->ref_count == 0) {
-            delete ptr;
-            delete control;
+        release();
+    }
+
+    void release() {
+        if (control) {
+            control->release_ref();
+            if (control->shared_count == 0) {
+                delete ptr;
+                if (control->weak_count == 0) {
+                    delete control;
+                }
+            }
         }
     }
+
     T& operator*() { return *ptr; }
     T* operator->() { return ptr; }
+
+    int use_count() const { return control ? control->shared_count : 0; }
+
+    friend class WeakPtr<T>;
 };
+
+// WeakPtr
+template<typename T>
+class WeakPtr {
+private:
+    T* ptr;
+    ControlBlock* control;
+public:
+    WeakPtr() : ptr(nullptr), control(nullptr) {}
+
+    WeakPtr(const SharedPtr<T>& shared) : ptr(shared.ptr), control(shared.control) {
+        if (control) control->add_weak();
+    }
+
+    WeakPtr(const WeakPtr& other) : ptr(other.ptr), control(other.control) {
+        if (control) control->add_weak();
+    }
+
+    WeakPtr& operator=(const WeakPtr& other) {
+        if (this != &other) {
+            release();
+            ptr = other.ptr;
+            control = other.control;
+            if (control) control->add_weak();
+        }
+        return *this;
+    }
+
+    ~WeakPtr() {
+        release();
+    }
+
+    void release() {
+        if (control) {
+            control->release_weak();
+            if (control->shared_count == 0 && control->weak_count == 0) {
+                delete control;
+            }
+        }
+    }
+
+    SharedPtr<T> lock() const {
+        return (control && control->shared_count > 0) ? SharedPtr<T>(*this) : SharedPtr<T>();
+    }
+};
+
+int main() {
+    SharedPtr<int> sp1(new int(10));
+    std::cout << "Shared count: " << sp1.use_count() << std::endl;
+
+    WeakPtr<int> wp1 = sp1;
+    {
+        SharedPtr<int> sp2 = sp1;
+        std::cout << "Shared count after copy: " << sp2.use_count() << std::endl;
+    }
+    std::cout << "Shared count after sp2 is destroyed: " << sp1.use_count() << std::endl;
+
+    return 0;
+}
+
 ```
 🚀 **Bài 7 giúp bạn hiểu sâu hơn về Smart Pointers và quản lý bộ nhớ hiệu quả trong C++!**
