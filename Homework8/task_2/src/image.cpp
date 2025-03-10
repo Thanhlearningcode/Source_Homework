@@ -1,11 +1,12 @@
 #include "image.hpp"
 #include <iostream>
 #include <stdio.h>
+#include <cstdlib>
 namespace igg {
 
 bool Image::ReadFromDisk(const std::string &filename) {
   if (io_strategy_ == nullptr) {
-    exit(1);
+    return EXIT_Failure;
   }
   ImageData img = io_strategy_->Read(filename);
   std::vector<Pixel> out_data;
