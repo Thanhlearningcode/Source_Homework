@@ -664,4 +664,398 @@ Hiểu và ngăn ngừa **data races** và **race conditions** là rất quan tr
 
 Để có thêm thông tin, bạn có thể tham khảo tài liệu về **`std::thread`**, **`std::mutex`**, và **`std::atomic`** trong **Thư Viện Chuẩn C++** để tìm hiểu kỹ hơn về các công cụ đồng bộ hóa luồng.
 
+
+# Hướng dẫn sử dụng Mutex trong C++
+
+## 1. Giới thiệu về `std::mutex`
+
+C++ cung cấp lớp `std::mutex` để sử dụng các mutex, giúp đồng bộ hóa các luồng (threads) trong chương trình. Mutex là công cụ giúp các luồng truy cập vào vùng nhớ dùng chung một cách an toàn.
+
+- Lớp `std::mutex` được định nghĩa trong thư viện `<mutex>`.
+- Một đối tượng mutex phải có khả năng nhìn thấy từ tất cả các hàm nhiệm vụ (task functions) sử dụng nó.
+- Đối tượng mutex phải được định nghĩa ngoài các hàm nhiệm vụ.
+
+## 2. Sử dụng `std::mutex`
+
+### a. Cách định nghĩa và sử dụng `std::mutex`
+
+- Đối tượng mutex có thể là biến toàn cục (global) hoặc tĩnh (static), với hàm nhiệm vụ toàn cục (global task function).
+- Đối tượng mutex có thể là thành viên lớp (class member) nếu hàm nhiệm vụ là thành viên của lớp đó.
+- Đối tượng mutex có thể được lambda function bắt giữ bằng tham chiếu (by reference).
+
+### b. Giao diện của `std::mutex`
+
+Mutex cung cấp ba phương thức chính:
+
+- **lock()**: Cố gắng khóa mutex. Nếu không thành công, sẽ đợi cho đến khi mutex được khóa.
+- **try_lock()**: Cố gắng khóa mutex và trả về ngay lập tức nếu không thể khóa mutex.
+- **unlock()**: Giải phóng khóa mutex.
+
+### c. Ví dụ sử dụng `std::mutex`
+
+```cpp
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+// Định nghĩa mutex toàn cục
+std::mutex task_mutex;
+
+void task(const std::string& str) {
+    for (int i = 0; i < 5; ++i) {
+        task_mutex.lock(); // Khóa mutex trước khi vào phần mã quan trọng
+        std::cout << str[i]; // Phần mã quan trọng
+        task_mutex.unlock(); // Giải phóng mutex sau khi hoàn thành phần mã quan trọng
+    }
+}
+
+int main() {
+    std::thread thr1(task, "abc");
+    std::thread thr2(task, "def");
+    std::thread thr3(task, "xyz");
+
+    thr1.join();
+    thr2.join();
+    thr3.join();
+
+    return 0;
+}
+
+It looks like you are asking for a README related to your code on thread synchronization with `std::mutex` and a vector class. Here's a basic example of what such a README might look like, in both English and Vietnamese:
+
+---
+
+## README: C++ Thread Synchronization Using `std::mutex` for `std::vector`
+
+### Overview
+
+This project demonstrates how to use a `std::mutex` to safely manage concurrent access to a `std::vector` in a multi-threaded environment. It wraps the `std::vector` in a class that synchronizes access to it using mutexes. The class ensures that only one thread can access the critical section (the vector) at a time.
+
+### Key Concepts
+
+1. **`std::mutex`**: 
+   - A `std::mutex` is used to ensure exclusive access to shared resources (in this case, the `std::vector`).
+   - Threads lock the mutex before accessing the vector and unlock it after the critical section is done.
+
+2. **`std::thread`**: 
+   - Threads are created to demonstrate concurrent access to the `std::vector`. Each thread will modify and print the vector.
+   
+3. **Critical Section**: 
+   - The code inside `push_back()` and `print()` is the critical section, where only one thread is allowed to execute at a time.
+
+### Code
+
+```cpp
+#include <thread>
+#include <mutex>
+#include <vector>
+#include <iostream>
+#include <chrono>
+
+using namespace std::literals;
+
+class Vector {
+    std::mutex mut;
+    std::vector<int> vec;
+public:
+    void push_back(const int& i) {
+        mut.lock();
+        vec.push_back(i);
+        mut.unlock();
+    }
+
+    void print() {
+        mut.lock();
+        for (auto i : vec) {
+            std::cout << i << ", ";
+        }
+        mut.unlock();
+    }
+};
+
+void func(Vector& vec) {
+    for (int i = 0; i < 5; ++i) {
+        vec.push_back(i);
+        std::this_thread::sleep_for(50ms);
+        vec.print();
+    }
+}
+
+int main() {
+    Vector vec;
+    std::thread thr1(func, std::ref(vec));
+    std::thread thr2(func, std::ref(vec));
+    std::thread thr3(func, std::ref(vec));
+
+    thr1.join(); thr2.join(); thr3.join();
+}
 ```
+
+### Explanation
+
+- The `Vector` class has a private `std::mutex` that is used to lock and unlock access to the vector.
+- The `push_back` function locks the mutex before modifying the vector and unlocks it after.
+- The `print` function locks the mutex while printing the vector to avoid concurrent modifications.
+- Three threads are created in `main()`, each running the `func()` function, which modifies and prints the vector.
+
+### How to Compile
+
+1. Save the code to a file, e.g., `thread_sync_vector.cpp`.
+2. Compile the code with a C++11 or later compatible compiler:
+   ```bash
+   g++ -std=c++11 thread_sync_vector.cpp -o thread_sync_vector -pthread
+   ```
+3. Run the program:
+   ```bash
+   ./thread_sync_vector
+   ```
+
+---
+
+## README: Đồng Bộ Luồng C++ Sử Dụng `std::mutex` cho `std::vector`
+
+### Tổng Quan
+
+Dự án này minh họa cách sử dụng `std::mutex` để quản lý truy cập đồng thời an toàn đến `std::vector` trong môi trường đa luồng. Nó bọc `std::vector` trong một lớp với cơ chế đồng bộ hóa sử dụng mutex. Lớp này đảm bảo rằng chỉ một luồng có thể truy cập vào phần chia sẻ (vector) tại một thời điểm.
+
+### Các Khái Niệm Chính
+
+1. **`std::mutex`**:
+   - `std::mutex` được sử dụng để đảm bảo truy cập độc quyền vào tài nguyên chia sẻ (trong trường hợp này là `std::vector`).
+   - Các luồng khóa mutex trước khi truy cập vector và mở khóa sau khi xong phần chia sẻ.
+
+2. **`std::thread`**:
+   - Các luồng được tạo ra để minh họa việc truy cập đồng thời đến `std::vector`. Mỗi luồng sẽ thay đổi và in ra vector.
+
+3. **Phần Chia Sẻ (Critical Section)**:
+   - Mã bên trong `push_back()` và `print()` là phần chia sẻ, nơi chỉ một luồng được phép thực thi tại một thời điểm.
+
+### Mã Nguồn
+
+```cpp
+#include <thread>
+#include <mutex>
+#include <vector>
+#include <iostream>
+#include <chrono>
+
+using namespace std::literals;
+
+class Vector {
+    std::mutex mut;
+    std::vector<int> vec;
+public:
+    void push_back(const int& i) {
+        mut.lock();
+        vec.push_back(i);
+        mut.unlock();
+    }
+
+    void print() {
+        mut.lock();
+        for (auto i : vec) {
+            std::cout << i << ", ";
+        }
+        mut.unlock();
+    }
+};
+
+void func(Vector& vec) {
+    for (int i = 0; i < 5; ++i) {
+        vec.push_back(i);
+        std::this_thread::sleep_for(50ms);
+        vec.print();
+    }
+}
+
+int main() {
+    Vector vec;
+    std::thread thr1(func, std::ref(vec));
+    std::thread thr2(func, std::ref(vec));
+    std::thread thr3(func, std::ref(vec));
+
+    thr1.join(); thr2.join(); thr3.join();
+}
+```
+
+### 
+
+- Lớp `Vector` có một `std::mutex` riêng để khóa và mở khóa truy cập vào vector.
+- Hàm `push_back` khóa mutex trước khi thay đổi vector và mở khóa sau khi xong.
+- Hàm `print` khóa mutex trong khi in ra vector để tránh việc thay đổi đồng thời.
+- Ba luồng được tạo trong `main()`, mỗi luồng thực thi hàm `func()`, thay đổi và in vector.
+
+### Cách Biên Dịch
+
+1. Lưu mã vào một tệp, ví dụ `thread_sync_vector.cpp`.
+2. Biên dịch mã với trình biên dịch C++11 hoặc cao hơn:
+   ```bash
+   g++ -std=c++11 thread_sync_vector.cpp -o thread_sync_vector -pthread
+   ```
+3. Chạy chương trình:
+   ```bash
+   ./thread_sync_vector
+   ```
+
+---
+
+Dưới đây là bản hướng dẫn về việc sử dụng các lớp mutex trong C++:
+
+## Các lớp `std::mutex` và `std::lock_guard`
+
+1. **Khi có ngoại lệ trong phần mã khóa**:
+   - Nếu một ngoại lệ được ném trong phần mã khóa (critical section), `unlock` không bao giờ được gọi, khiến mutex không được giải phóng.
+   - Các luồng khác đang chờ khóa mutex sẽ bị chặn và chương trình có thể bị "block" hoàn toàn.
+
+2. **Sử dụng `std::lock_guard` để tránh xung đột**:
+   - `std::lock_guard` là một lớp "wrapper" giúp tự động khóa và mở khóa mutex khi đối tượng `std::lock_guard` được tạo ra và hủy.
+   - Khi một đối tượng `std::lock_guard` được tạo, mutex sẽ tự động được khóa, và khi đối tượng này bị hủy (ra khỏi phạm vi), mutex sẽ tự động được mở khóa.
+
+3. **Ví dụ về sử dụng `std::lock_guard`**:
+   - Khi sử dụng `std::lock_guard`, bạn không cần phải gọi thủ công `lock` và `unlock`. Điều này giúp giảm thiểu rủi ro do quên mở khóa mutex sau khi thực hiện thao tác.
+
+**Ví dụ mã nguồn**:
+```cpp
+#include <iostream>
+#include <mutex>
+#include <thread>
+#include <chrono>
+#include <string>
+
+std::mutex print_mutex;
+
+void task(std::string str)
+{
+    for (int i = 0; i < 5; ++i) {
+        try {
+            // Tạo đối tượng std::lock_guard
+            std::lock_guard<std::mutex> lck_guard(print_mutex);
+
+            // Bắt đầu phần mã khóa
+            std::cout << str[0] << str[1] << str[2] << std::endl;
+
+            // Phần mã khóa ném ra ngoại lệ
+            throw std::exception();  // Ném ngoại lệ
+        }
+        catch (std::exception& e) {
+            std::cout << "Ngoại lệ bắt được: " << e.what() << '\n';
+        }
+    }
+}
+
+int main()
+{
+    std::thread thr1(task, "abc");
+    std::thread thr2(task, "def");
+    std::thread thr3(task, "xyz");
+
+    thr1.join(); thr2.join(); thr3.join();  // Đảm bảo các luồng hoàn thành
+}
+```
+
+4. **Lợi ích của `std::lock_guard`**:
+   - Tự động quản lý việc khóa và mở khóa mutex, giúp mã nguồn ngắn gọn và dễ bảo trì hơn.
+   - Giảm thiểu khả năng xảy ra lỗi, như quên gọi `unlock` hoặc quên kiểm tra khi ngoại lệ được ném ra.
+Dưới đây là nội dung file `README.md` bạn yêu cầu, với phần giải thích bằng tiếng Việt:
+
+```markdown
+# Hướng dẫn về Mutex và Đối tượng Lock trong C++
+
+## Tổng quan về Mutex
+
+Mutex (Mutual Exclusion) là một cơ chế đồng bộ giúp ngăn chặn truy cập đồng thời vào các tài nguyên chung, từ đó tránh được các vấn đề liên quan đến race condition khi nhiều luồng thực thi.
+
+## std::mutex
+
+`std::mutex` là lớp cung cấp cơ chế khóa (lock) trong thư viện chuẩn C++ để bảo vệ các tài nguyên chia sẻ khỏi sự truy cập đồng thời từ các luồng khác nhau. Để sử dụng `std::mutex`, ta phải đảm bảo rằng mỗi luồng sử dụng nó phải gọi `lock()` trước khi truy cập tài nguyên và gọi `unlock()` sau khi hoàn thành.
+
+### Các vấn đề khi có ngoại lệ trong Critical Section
+
+Khi một ngoại lệ được ném trong critical section (vùng mã cần được bảo vệ), mutex sẽ không được giải phóng nếu ta không gọi `unlock()` một cách rõ ràng. Điều này có thể dẫn đến tình trạng "deadlock", nơi các luồng khác không thể truy cập mutex và sẽ bị khóa vĩnh viễn.
+
+## std::lock_guard và std::unique_lock
+
+### std::lock_guard
+
+`std::lock_guard` là một lớp quản lý tự động giúp khóa mutex trong một phạm vi nhất định và tự động giải phóng mutex khi đối tượng `lock_guard` ra khỏi phạm vi (scope). Điều này giúp tránh tình trạng quên giải phóng mutex khi có ngoại lệ xảy ra.
+
+#### Ví dụ:
+
+```cpp
+std::mutex task_mutex;
+
+void task() {
+    std::lock_guard<std::mutex> lock(task_mutex);  // Mutex được khóa tự động
+    // Phần mã quan trọng
+    // Mutex được giải phóng khi lock_guard ra khỏi phạm vi
+}
+```
+
+### std::unique_lock
+
+`std::unique_lock` tương tự như `std::lock_guard`, nhưng linh hoạt hơn vì nó cho phép gọi `unlock()` thủ công, điều này hữu ích khi cần phải giải phóng mutex trước khi đối tượng `unique_lock` ra khỏi phạm vi.
+
+#### Ví dụ:
+
+```cpp
+std::mutex task_mutex;
+
+void task() {
+    std::unique_lock<std::mutex> lock(task_mutex);  // Mutex được khóa tự động
+    // Phần mã quan trọng
+    lock.unlock();  // Mutex được giải phóng thủ công
+    // Thực hiện thêm mã không quan trọng
+}
+```
+
+### So sánh std::lock_guard và std::unique_lock
+
+- `std::lock_guard` đơn giản và hiệu quả khi cần đảm bảo khóa mutex trong suốt phạm vi của một khối mã.
+- `std::unique_lock` cung cấp nhiều tính năng linh hoạt hơn, nhưng tiêu tốn tài nguyên hơn một chút so với `std::lock_guard`.
+
+## std::unique_lock với Move Semantics
+
+- `std::unique_lock` không thể được sao chép, nhưng có thể di chuyển. Khi di chuyển, khóa mutex sẽ được chuyển sang đối tượng `unique_lock` mới mà không tạo thêm bản sao.
+
+## Mutex Wrapper Class
+
+Để đảm bảo thread safety cho các đối tượng phức tạp như `std::vector`, ta có thể tạo ra lớp bao bọc (wrapper) có sử dụng `std::mutex` bên trong. Lớp này giúp quản lý khóa mutex một cách tự động.
+
+#### Ví dụ về lớp bao bọc `std::vector`:
+
+```cpp
+#include <mutex>
+#include <vector>
+
+class ThreadSafeVector {
+    std::mutex mut;
+    std::vector<int> vec;
+    
+public:
+    void push_back(int value) {
+        std::lock_guard<std::mutex> lock(mut);
+        vec.push_back(value);
+    }
+    
+    void print() {
+        std::lock_guard<std::mutex> lock(mut);
+        for (const auto& val : vec) {
+            std::cout << val << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+```
+
+## Lớp Wrapper cho std::mutex
+
+C++ cung cấp các lớp như `std::lock_guard`, `std::unique_lock` để giúp bảo vệ mutex mà không cần phải quản lý thủ công việc khóa và giải phóng mutex trong mã của bạn.
+
+## Kết luận
+
+- Sử dụng `std::lock_guard` khi bạn cần khóa mutex trong toàn bộ phạm vi của một hàm hoặc khối mã.
+- Sử dụng `std::unique_lock` nếu bạn cần linh hoạt hơn với các thao tác khóa và giải phóng mutex trong phạm vi.
+
+Nếu bạn cần thêm bất kỳ sự trợ giúp nào, đừng ngần ngại yêu cầu!
+```
+
